@@ -1,7 +1,7 @@
 import numpy as np
 
 
-def Nim_table(n):
+def nim_table(n):
    # Calculates the table of the Nim sum law for all integers between
    # 0 and 2^(2^n)
    t = np.zeros((2,2), int)
@@ -12,7 +12,7 @@ def Nim_table(n):
    else:   
        p = 2**(2**(n-1))
        res = np.zeros((p**2,p**2), int)
-       t = table_Nim(n-1)
+       t = nim_table(n-1)
        res[:p, :p] = t
        for u in range(p):
            for v in range(p):
